@@ -1,4 +1,4 @@
-module github.com/rocgao/rocgocommon
+module github.com/rocgao/roc-go-common
 
 go 1.19
 
