@@ -20,3 +20,11 @@ func (o Option[T]) None() bool {
 func (o Option[T]) Some() (T, bool) {
 	return o.value, o.none
 }
+
+func (o Option[T]) SomeOr(def T) T {
+	if o.none {
+		return def
+	}
+
+	return o.value
+}
