@@ -5,6 +5,6 @@ func Map[T1 any, T2 any](o Option[T1], mapFunc func(t1 T1) T2) Option[T2] {
 		return None[T2]()
 	}
 
-	v2 := mapFunc(o.value)
+	v2 := mapFunc(o.Value)
 	return Some(v2)
 }

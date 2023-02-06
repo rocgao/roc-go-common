@@ -1,7 +1,7 @@
 package option
 
 func Some[T any](v T) Option[T] {
-	return Option[T]{value: v, none: false}
+	return Option[T]{Value: v, none: false}
 }
 
 func None[T any]() Option[T] {
@@ -9,7 +9,7 @@ func None[T any]() Option[T] {
 }
 
 type Option[T any] struct {
-	value T
+	Value T
 	none  bool
 }
 
@@ -18,7 +18,7 @@ func (o Option[T]) None() bool {
 }
 
 func (o Option[T]) Some() (T, bool) {
-	return o.value, o.none
+	return o.Value, o.none
 }
 
 func (o Option[T]) SomeOr(def T) T {
@@ -26,5 +26,5 @@ func (o Option[T]) SomeOr(def T) T {
 		return def
 	}
 
-	return o.value
+	return o.Value
 }
